@@ -37,18 +37,18 @@ def start(update: Update, context: CallbackContext) -> None:
         param = args[0]  # Mengambil parameter setelah '/start'
         if param.startswith("get_"):
             if check_membership(user.id, context):
-                update.message.reply_text(f'Terima kasih telah bergabung dengan semua grup/channel! Ini link Anda: {SECRET_LINK}')
+                update.message.reply_text(f'Ini link Anda: {SECRET_LINK}')
             else:
                 keyboard_buttons = [
-                    [InlineKeyboardButton("Gabung Grup/Channel 1", url=INVITE_LINKS[0])],
-                    [InlineKeyboardButton("Gabung Grup/Channel 2", url=INVITE_LINKS[1])],
-                    [InlineKeyboardButton("Gabung Grup/Channel 3", url=INVITE_LINKS[2])],
-                    [InlineKeyboardButton("Gabung Grup/Channel 4", url=INVITE_LINKS[3])],
-                    [InlineKeyboardButton("Gabung Grup/Channel 5", url=INVITE_LINKS[4])],
-                    [InlineKeyboardButton("ULANGI", callback_data='check')]
+                    [InlineKeyboardButton("JOIN", url=INVITE_LINKS[0])],
+                    [InlineKeyboardButton("JOIN", url=INVITE_LINKS[1])],
+                    [InlineKeyboardButton("JOIN", url=INVITE_LINKS[2])],
+                    [InlineKeyboardButton("JOIN", url=INVITE_LINKS[3])],
+                    [InlineKeyboardButton("JOIN", url=INVITE_LINKS[4])],
+                    [InlineKeyboardButton("LANJUTKAN", callback_data='check')]
                 ]
                 keyboard = InlineKeyboardMarkup(keyboard_buttons)
-                update.message.reply_text('WAJIB JOIN SEBELUM MELANJUTKAN. Setelah bergabung, klik tombol "ULANGI".', reply_markup=keyboard)
+                update.message.reply_text('WAJIB JOIN SEBELUM MELANJUTKAN. Setelah bergabung, klik tombol "LANJUTKAN".', reply_markup=keyboard)
         else:
             update.message.reply_text('Parameter tidak dikenali.')
     else:
@@ -60,9 +60,9 @@ def ulangi(update: Update, context: CallbackContext) -> None:
     query.answer()
     
     if check_membership(user.id, context):
-        query.edit_message_text(f'Terima kasih telah bergabung dengan semua grup/channel! Ini link Anda: {SECRET_LINK}')
+        query.edit_message_text(f'Ini link Anda: {SECRET_LINK}')
     else:
-        query.edit_message_text('WAJIB JOIN SEBELUM MELANJUTKAN. Setelah bergabung, klik tombol "ULANGI".')
+        query.edit_message_text('WAJIB JOIN SEBELUM MELANJUTKAN. Setelah bergabung, klik tombol "LANJUTKAN".')
 
 def main() -> None:
     updater = Updater(TOKEN)
