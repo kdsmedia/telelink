@@ -11,11 +11,11 @@ load_dotenv()
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 # Token bot yang diberikan oleh BotFather
-TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+TOKEN = os.getenv('7198466906:AAG1UPoGLiKvVlCPTVgBPpJlt5TumMHr8qo')
 # ID grup atau channel yang pengguna harus bergabung
 GROUP_IDS = list(map(int, os.getenv('GROUP_IDS', 'group_id_1,group_id_2,group_id_3,group_id_4,group_id_5').split(',')))
 # Link yang akan diberikan kepada pengguna setelah mereka bergabung dengan semua grup atau channel
-SECRET_LINK = os.getenv('SECRET_LINK', 'https://your-secret-link.com')
+SECRET_LINK = os.getenv('SECRET_LINK', 'https://digitop.my.id')
 # Link undangan untuk grup atau channel
 INVITE_LINKS = os.getenv('INVITE_LINKS', 'invite_link_1,invite_link_2,invite_link_3,invite_link_4,invite_link_5').split(',')
 
